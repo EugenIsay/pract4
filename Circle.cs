@@ -14,15 +14,20 @@ namespace Figures
         {
             this.r = r;
         }
-        public float P()
+        private float P()
         {
             result = 2 * (float)Math.PI * r;
             return result;
         }
-        public float S()
+        private float S()
         {
             result = (float)Math.PI * (float)Math.Pow(r, 2);
             return result;
+        }
+        public void ShowResult()
+        {
+            Console.WriteLine($"Периметр круга {P()}");
+            Console.WriteLine($"Площадь круга {S()}");
         }
     }
 }

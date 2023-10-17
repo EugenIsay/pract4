@@ -7,36 +7,39 @@ class Programm
         while (true)
         {
             Console.WriteLine("Введите с какой фигурой взаимодействовать");
-            Console.WriteLine("S - квадрат, R - прямоугольник, C - круг, T - треугольник");
+            Console.WriteLine("S - квадрат, R - прямоугольник, C - круг, T - треугольник, P - круг");
             key = Console.ReadKey(true);
             switch (key.Key.ToString())
             {
                 case "S":
-                    Console.WriteLine("Введите длину одной стороны");
                     Square square = new Square();
+                    Console.WriteLine("Введите длину одной стороны");
                     square.Info(float.Parse(Console.ReadLine()));
-                    Console.WriteLine($"Периметр квадрата {square.P()}");
-                    Console.WriteLine($"Площадь квадрата {square.S()}");
+                    square.ShowResult();
                     break;
                 case "R":
                     Rectangle rectangle = new Rectangle();
                     Console.WriteLine("Введите длину 2 сторон");
                     rectangle.Info(float.Parse(Console.ReadLine()), float.Parse(Console.ReadLine()));
-                    Console.WriteLine($"Периметр прямоугольника {rectangle.P()}");
-                    Console.WriteLine($"Площадь прямоугольника {rectangle.S()}");
+                    rectangle.ShowResult();
                     break;
                 case "C":
                     Circle circle = new Circle();
                     Console.WriteLine("Введите радиус");
                     circle.Info(float.Parse(Console.ReadLine()));
-                    Console.WriteLine($"Периметр круга {circle.P()}");
-                    Console.WriteLine($"Площадь круга {circle.S()}");
+                    circle.ShowResult();
                     break;
                 case "T":
                     Triangle triangle = new Triangle();
                     Console.WriteLine("Введите длинну 3 сторон треугольника");
                     triangle.Info(float.Parse(Console.ReadLine()), float.Parse(Console.ReadLine()), float.Parse(Console.ReadLine()));
                     triangle.ShowResults();
+                    break;
+                case "P":
+                    Pyramid pyramid = new Pyramid();
+                    Console.WriteLine("Введите длинну 1 стороны, количество сторон у основания и высоту");
+                    pyramid.Info(float.Parse(Console.ReadLine()), float.Parse(Console.ReadLine()), float.Parse(Console.ReadLine()));
+                    pyramid.ShowResults();
                     break;
             }
         }

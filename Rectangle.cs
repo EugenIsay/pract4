@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,15 +16,20 @@ namespace Figures
         {
             this.a = a; this.b = b;
         }
-        public float P()
+        private float P()
         {
             result = 2 * a + 2 * b;
             return result;
         }
-        public float S()
+        private float S()
         {
             result = a * b;
             return result;
+        }
+        public void ShowResult()
+        {
+            Console.WriteLine($"Периметр прямоугольника {P()}");
+            Console.WriteLine($"Площадь прямоугольника {S()}");
         }
     }
 }

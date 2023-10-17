@@ -14,15 +14,20 @@ namespace Figures
         {
             this.a = a;
         }
-        public float P()
+        private float P()
         {
             result = 4 * a;
             return result;
         }
-        public float S()
+        private float S()
         {
             result = a * a;
             return result;
+        }
+        public void ShowResult()
+        {
+            Console.WriteLine($"Периметр квадрата {P()}");
+            Console.WriteLine($"Площадь квадрата {S()}");
         }
     }
 }
