@@ -34,16 +34,9 @@ class Programm
                     break;
                 case "T":
                     Triangle triangle = new Triangle();
+                    Console.WriteLine("Введите длинну 3 сторон треугольника");
                     triangle.Info(float.Parse(Console.ReadLine()), float.Parse(Console.ReadLine()), float.Parse(Console.ReadLine()));
-                    if (triangle.proverka() == true)
-                    {
-                        Console.WriteLine($"Периметр треугольника {triangle.P() * 2}");
-                        Console.WriteLine($"Площадь треугольника {triangle.S()}");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Такой треугольник не существует");
-                    }
+                    triangle.ShowResults();
                     break;
             }
         }
