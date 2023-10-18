@@ -13,16 +13,19 @@ namespace Figures
         private float h;
         private float r;
         private float result;
+        private bool cone;
         public void InfoCir(float r, float h)
         {
             this.r = r;
             this.h = h;
+            cone = true;
         }
         public void Info(float a, float num, float h)
         {
             this.num = num;
             this.a = a;
             this.h = h;
+            cone = false;
         }
         private float A()
         {
@@ -31,17 +34,26 @@ namespace Figures
         }
         private float P()
         {
-            result = num * (float)Math.Sqrt((float)Math.Pow(A(), 2) + (float)Math.Pow(h, 2)) + num * a;
+            if (cone == false)
+                result = num * (float)Math.Sqrt((float)Math.Pow(A(), 2) + (float)Math.Pow(h, 2)) + num * a;
+            else
+                result = S_Base();
             return result;
         }
         private float S_Base()
         {
-            result = (num * A() * a) / 2;
+            if (cone == false)
+                result = (num * A() * a) / 2;
+            else if (cone == true)
+                result = (float)Math.PI * (float)Math.Pow(r, 2);
             return result;
         }
         private float S()
         {
-            result = S_Base() + (num * a * ((float)Math.Sqrt((float)Math.Pow(h, 2) + (float)Math.Pow(A(), 2)))) / 2;
+            if (cone == false)
+                result = S_Base() + (num * a * ((float)Math.Sqrt((float)Math.Pow(h, 2) + (float)Math.Pow(A(), 2)))) / 2;
+            else if (cone == true)
+                result = S_Base() + (float)Math.PI * r * ((float)Math.Sqrt((float)Math.Pow(h, 2) + (float)Math.Pow(r, 2)));
             return result;
         }
         private float V()
