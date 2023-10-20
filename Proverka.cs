@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Figures
 {
     internal class Proverka
     {
+        ConsoleKeyInfo key;
+        private string read = "";
+        private bool dot;
         private float arg0 = 0;
         private float arg1 = 0;
         private float arg2 = 0;
@@ -36,7 +39,7 @@ namespace Figures
         }
         public void show_one(out float arg0)
         {
-            one_num(Console.ReadLine());
+            read_key();
             arg0 = this.arg0;
         }
         public void show_two(out float arg0, out float arg1)
@@ -51,6 +54,52 @@ namespace Figures
             arg0 = this.arg0;
             arg1 = this.arg1;
             arg2 = this.arg2;
+        }
+        private void read_key()
+        {
+            dot = false;
+            while (true)
+            {
+                key = Console.ReadKey(true);
+                switch (key.Key.ToString())
+                {
+                    case "D1":
+                    case "D2":
+                    case "D3":
+                    case "D4":
+                    case "D5":
+                    case "D6":
+                    case "D7":
+                    case "D8":
+                    case "D9":
+                    case "D0":
+                        read += key.Key.ToString().Remove(0,1);
+                        Console.Write(key.Key.ToString().Remove(0, 1));
+                        break;
+                    case "OemComma":
+                        if (dot == false)
+                        {
+                            read += ",";
+                            dot = true;
+                            Console.Write(",");
+                        }
+                        break;
+                    case "Enter":
+                    case "Spacebar":
+                        Console.Write(" ");
+                        goto end;
+                    case "Backspace":
+                        if (read.Substring(read.Length - 1) == ",")
+                            dot = false;
+                        read.Remove(0, 1);
+                        //Console.SetCursorPosition(Cursor.Position.X - 60, Cursor.Position.X);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        end:;
+            Console.WriteLine(read);
         }
     }
 }
