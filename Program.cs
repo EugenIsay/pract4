@@ -71,7 +71,7 @@ class Programm
                         case "M":
                             Console.WriteLine("Введите длинну 1 стороны, количество сторон у основания и высоту");
                             read.show_three(out float f1, out float f2, out float f3);
-                            if (read.show_result() == true)
+                            if (read.show_result() == true && f2 > 2)
                             {
                                 pyramid.Info(f1, f2, f3);
                                 pyramid.ShowResults();

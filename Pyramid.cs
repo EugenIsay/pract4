@@ -37,7 +37,7 @@ namespace Figures
             if (cone == false)
                 result = num * (float)Math.Sqrt((float)Math.Pow(A(), 2) + (float)Math.Pow(h, 2)) + num * a;
             else
-                result = S_Base();
+                result = 2 * (float)Math.PI * r;
             return result;
         }
         private float S_Base()
@@ -51,7 +51,7 @@ namespace Figures
         private float S()
         {
             if (cone == false)
-                result = S_Base() + (num * a * ((float)Math.Sqrt((float)Math.Pow(h, 2) + (float)Math.Pow(A(), 2)))) / 2;
+                result = S_Base() + ((num * a * ((float)Math.Sqrt((float)Math.Pow(h, 2) + (float)Math.Pow(A(), 2)))) / 2);
             else if (cone == true)
                 result = S_Base() + (float)Math.PI * r * ((float)Math.Sqrt((float)Math.Pow(h, 2) + (float)Math.Pow(r, 2)));
             return result;
