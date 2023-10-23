@@ -6,17 +6,14 @@ using System.Threading.Tasks;
 
 namespace Figures
 {
-    internal class Pyramid
+    internal class Pyramid : Figures
     {
         private float num;
-        private float a;
-        private float h;
-        private float r;
-        private float result;
         private bool cone;
         public void InfoCir(float r, float h)
         {
             this.r = r;
+            l(r);
             this.h = h;
             cone = true;
         }
@@ -32,28 +29,33 @@ namespace Figures
             result = a / (2 * (float)Math.Tan(Math.PI / num));
             return result;
         }
-        private float P()
+        private float l(float r)
+        {
+            result = (float)Math.Sqrt((float)Math.Pow(r, 2) + (float)Math.Pow(h, 2));
+            return result;
+        }
+        private float P_Pyr()
         {
             if (cone == false)
-                result = num * (float)Math.Sqrt((float)Math.Pow(A(), 2) + (float)Math.Pow(h, 2)) + num * a;
+                result = num * P(l(A()), a);
             else
-                result = 2 * (float)Math.PI * r;
+                result = P_Cir(r);
             return result;
         }
         private float S_Base()
         {
             if (cone == false)
-                result = (num * A() * a) / 2;
+                result = (num * a * A()) / 2;
             else if (cone == true)
-                result = (float)Math.PI * (float)Math.Pow(r, 2);
+                result = S_Cir(r);
             return result;
         }
         private float S()
         {
             if (cone == false)
-                result = S_Base() + ((num * a * ((float)Math.Sqrt((float)Math.Pow(h, 2) + (float)Math.Pow(A(), 2)))) / 2);
+                result = S_Base() + ((num * a * l(A())) / 2);
             else if (cone == true)
-                result = S_Base() + (float)Math.PI * r * ((float)Math.Sqrt((float)Math.Pow(h, 2) + (float)Math.Pow(r, 2)));
+                result = S_Base() + (float)Math.PI * r * l(r);
             return result;
         }
         private float V()
@@ -63,7 +65,7 @@ namespace Figures
         }
         public void ShowResults()
         {
-            Console.WriteLine($"Периметр пирамиды {P()}");
+            Console.WriteLine($"Периметр пирамиды {P_Pyr()}");
             Console.WriteLine($"Площадь пирамиды {S()}");
             Console.WriteLine($"Объём пирамиды {V()}");
         }

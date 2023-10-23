@@ -5,12 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Figures
 {
-    internal class Triangle
+    internal class Triangle: Figures
     {
-        private float a;
-        private float b;
         private float c;
-        private float result;
         private string temp0;
         private string temp1;
         public void Info(float a, float b, float c)

@@ -6,28 +6,16 @@ using System.Threading.Tasks;
 
 namespace Figures
 {
-    internal class Square
+    internal class Square : Figures
     {
-        private float result;
-        private float a;
         public void Info(float a)
         {
             this.a = a;
         }
-        private float P()
-        {
-            result = 4 * a;
-            return result;
-        }
-        private float S()
-        {
-            result = a * a;
-            return result;
-        }
         public void ShowResult()
         {
-            Console.WriteLine($"Периметр квадрата {P()}");
-            Console.WriteLine($"Площадь квадрата {S()}");
+            Console.WriteLine($"Периметр квадрата {P(a, a)}");
+            Console.WriteLine($"Площадь квадрата {S(a, a)}");
         }
     }
 }
