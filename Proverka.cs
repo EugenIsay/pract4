@@ -11,18 +11,18 @@ namespace Figures
         ConsoleKeyInfo key;
         private string read;
         private bool dot;
-        public void show_one(out float arg0)
+        public void read_show(out float arg0)
         {
             arg0 = read_key();
             Console.WriteLine(" ");
         }
-        public void show_two(out float arg0, out float arg1)
+        public void read_show(out float arg0, out float arg1)
         {
             arg0 = read_key();
             arg1 = read_key();
             Console.WriteLine(" ");
         }
-        public void show_three(out float arg0, out float arg1, out float arg2)
+        public void read_show(out float arg0, out float arg1, out float arg2)
         {
             arg0 = read_key();
             arg1 = read_key();

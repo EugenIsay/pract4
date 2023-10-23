@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Figures
 {
-    internal class Triangle: Figures
+    internal class Triangle: Figure
     {
         private float c;
         private string temp0;

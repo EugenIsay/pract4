@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Figures
 {
-    internal class Square : Figures
+    internal class Square : Figure
     {
-        public void Info(float a)
+        public void Info(float a, float b)
         {
-            this.a = a;
+            this.a = a; this.b = b;
         }
         public void ShowResult()
         {

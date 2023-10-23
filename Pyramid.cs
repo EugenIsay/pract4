@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Figures
 {
-    internal class Pyramid : Figures
+    internal class Pyramid : Circle
     {
         private float num;
         private bool cone;
-        public void InfoCir(float r, float h)
+        public void Info(float r, float h)
         {
             this.r = r;
-            l(r);
             this.h = h;
+            l(r);
             cone = true;
         }
         public void Info(float a, float num, float h)
@@ -34,12 +34,12 @@ namespace Figures
             result = (float)Math.Sqrt((float)Math.Pow(r, 2) + (float)Math.Pow(h, 2));
             return result;
         }
-        private float P_Pyr()
+        private float P()
         {
             if (cone == false)
                 result = num * P(l(A()), a);
             else
-                result = P_Cir(r);
+                result = P(r);
             return result;
         }
         private float S_Base()
@@ -47,7 +47,7 @@ namespace Figures
             if (cone == false)
                 result = (num * a * A()) / 2;
             else if (cone == true)
-                result = S_Cir(r);
+                result = S(r);
             return result;
         }
         private float S()
@@ -65,7 +65,7 @@ namespace Figures
         }
         public void ShowResults()
         {
-            Console.WriteLine($"Периметр пирамиды {P_Pyr()}");
+            Console.WriteLine($"Периметр пирамиды {P()}");
             Console.WriteLine($"Площадь пирамиды {S()}");
             Console.WriteLine($"Объём пирамиды {V()}");
         }

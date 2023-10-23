@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Figures
 {
-    internal class Rectangle : Figures
+    internal class Rectangle : Figure
     {
         public void Info(float a, float b)
         {

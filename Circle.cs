@@ -6,16 +6,22 @@ using System.Threading.Tasks;
 
 namespace Figures
 {
-    internal class Circle : Figures
+    internal class Circle : Figure
     {
-        public void Info(float r)
+        protected float P(float r)
         {
-            this.r = r;
+            result = r * 2 * (float)Math.PI;
+            return result;
+        }
+        protected float S(float r)
+        {
+            result = (float)Math.Pow(r, 2) * (float)Math.PI;
+            return result;
         }
         public void ShowResult()
         {
-            Console.WriteLine($"Периметр круга {P_Cir(r)}");
-            Console.WriteLine($"Площадь круга {S_Cir(r)}");
+            Console.WriteLine($"Периметр круга {P(a)}");
+            Console.WriteLine($"Площадь круга {S(a)}");
         }
     }
 }
