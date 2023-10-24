@@ -19,8 +19,8 @@ namespace Figures
         }
         public void Info(float a, float num, float h)
         {
-            this.num = num;
             this.a = a;
+            this.num = num;
             this.h = h;
             cone = false;
         }
