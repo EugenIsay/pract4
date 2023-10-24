@@ -37,7 +37,7 @@ namespace Figures
         private float P()
         {
             if (cone == false)
-                result = num * P(l(A()), a);
+                result = num * (l(A())+ a);
             else
                 result = P(r);
             return result;

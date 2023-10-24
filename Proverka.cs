@@ -72,7 +72,7 @@ namespace Figures
                         {
                             if (read.Substring(read.Length - 1) == ",")
                                 dot = false;
-                            read.Remove(0, 1);
+                            read = read.Remove(0, 1);
                             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
                             Console.Write(" ");
                             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
