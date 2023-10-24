@@ -14,8 +14,8 @@ namespace Figures
         {
             this.r = r;
             this.h = h;
-            l(r);
             cone = true;
+            l(r);
         }
         public void Info(float a, float num, float h)
         {
