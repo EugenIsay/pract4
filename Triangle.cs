@@ -7,7 +7,6 @@ namespace Figures
 {
     internal class Triangle: Figure
     {
-        private float c;
         private string temp0;
         private string temp1;
         public void Info(float a, float b, float c)
