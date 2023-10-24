@@ -61,7 +61,7 @@ namespace Figures
                         break;
                     case "Enter":
                     case "Spacebar":
-                        if (float.Parse(read) > 0)
+                        if (read.Length > 0 && float.Parse(read) > 0)
                         {
                             Console.Write(" ");
                             goto end;
